@@ -6,6 +6,9 @@ class Main {
         // println 'c\'est la paix!'
         def var = new Main().foo('jesus')
         println var
+
+        funcFB(100)
+
     }
 
     String foo(String str) {
@@ -107,6 +110,7 @@ class Main {
                 .findAll() { it % 2 == 0 }
                 .collect { it * 2 }
                 .findAll { it < 20 }
+
     }
 
 
@@ -144,6 +148,81 @@ class Main {
                 .collect (dobro)
                 .findAll (menorQue(max))
                 .sort {a, b -> a <= b ? 1 : -1 }
+    }
+
+    int f (int n)  { n *2 }
+
+    def myCollectCoisa(def list){
+        list.collect(this.&f)
+    }
+
+
+    int primitiveType (int param){
+        1
+    }
+
+
+    int primitiveType (Integer param){
+        2
+    }
+
+
+    int primitiveType (long param){
+        3
+    }
+
+
+    int primitiveType (Long param){
+        4
+    }
+
+    def dynamicVar(def param){
+        param = 123
+        param
+    }
+
+    def funcFB(int num) {
+        //  0..100
+        // pares
+        //dobro
+        // numeros < 20
+
+        List crap = (1..num)
+
+        List crap2 = (1..num).findAll(){it % 15 == 0}
+
+        List crap3 = (1..num).findAll(){it % 5 == 0}
+
+        List crap4 = (1..num).findAll(){it % 3 == 0}
+
+
+
+        crap
+        .replaceAll() {  }
+            // .replaceAll(){it -> it % 5 == 0 ? "Buzz" : it}
+            // .replaceAll(){it -> it % 3 == 0 ? "Fizz" : it}
+
+            // .findAll(){it % 15 == 0}
+            //    .replaceIf( % 15 == 0,'FizzBuzz')
+            //    .replaceAll(it % 5,'Buzz')
+            //    .replaceAll(it % 3 ,'Fizz')
+            //.forEach(println(it))
+
+
+        }
+
+    Map<String, Integer> notas(int valor){
+
+        def notas = [100,50,20,10,5,2,1]
+        def nomeNotas = ['cem','cinquenta','vinte','dez','cinco','dois','um']
+        def newMap = [:]
+            notas.forEach() {newMap.put(nomeNotas.first(), )
+             nomeNotas.remove(0)
+
+             }
+        newMap
+
+
     }
 
 }

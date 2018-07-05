@@ -72,6 +72,13 @@ class MainTest {
         assert result == [2, 4, 6]
     }
 
+    @Test
+    void testCollectCoisa() {
+        def result = main.myCollectCoisa([1, 2, 3])
+
+        assert result == [2, 4, 6]
+    }
+
  /*   @Test
     void testCollectFerrado() {
         def result = main.myCollect(['1', 2, 3])
@@ -126,6 +133,110 @@ class MainTest {
         def result = main.funcTretaInv(100, 21)
 
         assert result == [20, 16, 12, 8, 4, 0]
+    }
+
+    @Test
+    void testPrimitiveIntType() {
+        int param = 0
+
+        def result = main.primitiveType(param)
+
+        assert result == 2
+    }
+
+    @Test
+    void testPrimitiveLongType() {
+        long param = 0
+
+        def result = main.primitiveType(param)
+
+        assert result == 4
+    }
+
+    @Test
+    void testPrimitiveIntTypeDef() {
+        def param = 0
+
+        def result = main.primitiveType(param)
+
+        assert result == 2
+    }
+
+    @Test
+    void testPrimitiveLongTypeDef() {
+        def param = 0L
+
+        def result = main.primitiveType(param)
+
+        assert result == 4
+    }
+
+    @Test
+    void testDynamicVar() {
+        def param = 'test'
+
+        def result = main.dynamicVar(param)
+
+        //assert result.getClass() == int <-- falha
+        assert result.getClass() == Integer // sucesso
+    }
+
+    @Test
+    void testDynamicVar2() {
+        def param = 1.0
+
+        def result = main.dynamicVar(param)
+
+        assert result.getClass() == Integer
+    }
+
+    @Test
+    void testCompareClasses() {
+        def user1 = new User('Troxa', 30)
+        def user2 = new User('Otario', 62)
+
+        assert user1 != user2
+    }
+
+    @Test
+    void testCompareClasses2() {
+        def user1 = new User('Troxa', 30)
+        def user2 = new User('Troxa', 30)
+
+        assert user1 == user2
+    }
+    /*
+    @Test
+    void testClassAttrib(){
+        def user = new User('Troxa', 30)
+
+        assert user.name == 'Troxa'
+
+       // user.name = 'Otario'
+       // assert user.name == 'Otario'
+
+        // user.name = 'Otario'
+        // assert user.getName() == 'Otario' <- falha
+        user.setName('Otario')
+        assert user.getName() == 'Otario'
+    }
+    */
+/*
+     @Test
+     void testFB(){
+       // def result = main.funcFB(15)
+
+        // assert result == [1,2,'Fizz',4,'Buzz','Fizz',7,8,'Fizz','Buzz',11,'Fizz',13,14,'FizzBuzz']
+
+         assert (0..0)==[0]
+         //assert result == [14]
+     }
+*/
+
+    @Test
+    void testCaixa(){
+        def result = main.notas(80)
+        assert result == [cem : 0]
     }
 
 }

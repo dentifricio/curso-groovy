@@ -236,7 +236,27 @@ class MainTest {
     @Test
     void testCaixa(){
         def result = main.notas(80)
-        assert result == [cem : 0]
+        assert result == [cem:0, cinquenta:1, vinte:1, dez:1, cinco:0, dois:0, um:0]
+    }
+
+    @Test
+    void testCaixa126(){
+        def result = main.notas(126)
+        assert result == [cem:1, cinquenta:0, vinte:1, dez:0, cinco:1, dois:0, um:1]
+    }
+
+    @Test
+    void testCaixa387(){
+        def result = main.notas(388)
+        assert result == [cem:3, cinquenta:1, vinte:1, dez:1, cinco:1, dois:1, um:1]
+    }
+
+    @Test
+    void reverso(){
+        def result = main.reverse(0..10)
+
+        assert result == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
     }
 
 }

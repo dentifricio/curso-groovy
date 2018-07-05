@@ -212,17 +212,29 @@ class Main {
         }
 
     Map<String, Integer> notas(int valor){
-
+        
         def notas = [100,50,20,10,5,2,1]
         def nomeNotas = ['cem','cinquenta','vinte','dez','cinco','dois','um']
         def newMap = [:]
-            notas.forEach() {newMap.put(nomeNotas.first(), )
-             nomeNotas.remove(0)
 
-             }
+        notas.forEach() {
+            newMap.put(nomeNotas.first(), valor.intdiv(it))
+            nomeNotas.remove(0)
+            valor -= (it * (valor.intdiv(it)))
+        }
+
         newMap
+    }
+
+    List<Integer> reverse(def data){
+        //reduce
+        data.inject([]){
+            acc, cur -> [cur] + acc
+        }
+
 
 
     }
+
 
 }

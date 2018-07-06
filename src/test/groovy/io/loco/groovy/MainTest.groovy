@@ -246,7 +246,7 @@ class MainTest {
     }
 
     @Test
-    void testCaixa387(){
+    void testCaixa388(){
         def result = main.notas(388)
         assert result == [cem:3, cinquenta:1, vinte:1, dez:1, cinco:1, dois:1, um:1]
     }
@@ -258,5 +258,35 @@ class MainTest {
         assert result == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
     }
+
+
+    @Test
+    void testCaixa28(){
+        def result = main.saque(28)
+        assert result == [100:0, 50:0, 20:1, 10:0, 5:0, 2:4]
+    }
+
+
+    @Test
+    void testCaixa90(){
+        def result = main.saque(90)
+        assert result == [100:0, 50:1, 20:2, 10:0, 5:0, 2:0]
+    }
+
+    @Test
+    void testCaixa55(){
+        def result = main.saque(55)
+        assert result == [100:0, 50:1, 20:0, 10:0, 5:1, 2:0]
+    }
+/*
+    @Test
+    void testCaixa51(){
+        try {
+            main.saque(51)
+            throw new Exception('morreu')
+        }catch (valorNaoSuportadoException)
+        //assert result == [100:0, 50:0, 20:2, 10:0, 5:1, 2:3]
+    }*/
+
 
 }

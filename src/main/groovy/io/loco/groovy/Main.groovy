@@ -236,5 +236,27 @@ class Main {
 
     }
 
+ /*   static final int[] NOTAS = [100, 50, 20, 10, 5, 2]
+
+ //   def calculaNotasColetadas = { valor, nota, resto ->
+ //       def numNotas =  resto % 2 == 0 || resto >= 5 ? valor.intdiv(nota) : 0
+ //       numNotas == 0 ? calculaNotasColetadas(valor, nota, resto -1) : 0
+ //   }
+
+    void erro(valor){
+        throw new valorNaoSuportadoException()
+    }
+
+    Map<Integer, Integer> saque(int valor){
+        valor % 2 == 0 | valor % 5 == 0 ?
+        (NOTAS.inject([valor: valor]){
+        estado, nota ->
+            def resto = estado.valor % nota
+            def notasColetadas = resto % 2 == 0 || resto >= 5 ? estado.valor.intdiv(nota) : 0
+            //def notasColetadas = calculaNotasColetadas(estado.valor, nota, resto)
+            def novoValor = estado.valor - (nota * notasColetadas)
+            estado + [(nota): notasColetadas, valor: novoValor]
+        } - [valor : 0]) : erro(valor)
+    }*/
 
 }
